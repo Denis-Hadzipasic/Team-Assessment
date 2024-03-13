@@ -1,10 +1,9 @@
 const bcrypt = require("bcrypt");
-
 const { Schema, model } = require("mongoose");
 
 const userSchema = new Schema({
   logInID: { type: Number, required: true, unique: true },
-  password: { type: String, required: true, select: false }, // why is password still sent in the response
+  password: { type: String, required: true, select: false }, // why is password still sent in the response?
   role: { type: String, enum: ["user", "admin"], default: "user" },
 });
 

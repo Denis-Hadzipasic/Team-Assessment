@@ -13,6 +13,39 @@ const createCandidate = asyncWrapper(async (req, res, next) => {
   res.status(201).json(candidate);
 });
 
-module.exports = { 
-    createCandidate 
+const getCandidate = asyncWrapper(async (req, res, next) => {
+  const { id } = req.params;
+
+  const candidate = await Candidate.findById(id).populate("evaluator");
+
+  res.json(candidate);
+});
+
+const updateCandidate = asyncWrapper(async (req, res, next) => {
+  const { id } = req.params;
+  const { assesmentGrade } = req.body;
+  const { id: userID } = req.user;
+
+  const candidate = await Candidate.findById(id);
+  if (candidate && candidate.evaluator.includes(userID)) {
+    throw new ErrorResponse("User already voted!", 400);
+  }
+
+  const updateCandidate = await Candidate.findByIdAndUpdate(
+    id,
+    { $push: { evaluator: userID, assessmentGrade: assesmentGrade } },
+    { new: true }
+  );
+
+  if (!updateCandidate) {
+    throw new ErrorResponse("Candidate not found!", 404);
+  } else {
+    res.json(updateCandidate);
+  }
+});
+
+module.exports = {
+  createCandidate,
+  getCandidate,
+  updateCandidate,
 };
