@@ -16,6 +16,14 @@ const createUser = asyncWrapper(async (req, res, next) => {
   res.status(201).json(user)
 });
 
+const getProfile = asyncWrapper(async(req, res, next) => {
+  const {id} = req.user
+
+  const user = await User.findById(id)
+
+  res.json(user)
+})
+
 const login = asyncWrapper(async (req, res, next) => {
   const { logInID, password } = req.body;
 
@@ -56,6 +64,7 @@ const logout = asyncWrapper(async (req, res, next) => {
 
 module.exports = {
   createUser,
+  getProfile,
   login,
   logout
 };
