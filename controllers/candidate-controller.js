@@ -23,7 +23,7 @@ const getCandidate = asyncWrapper(async (req, res, next) => {
 
 const updateCandidate = asyncWrapper(async (req, res, next) => {
   const { id } = req.params;
-  const { assesmentGrade } = req.body;
+  const { assessmentGrade } = req.body;
   const { id: userID } = req.user;
 
   const candidate = await Candidate.findById(id);
@@ -33,7 +33,7 @@ const updateCandidate = asyncWrapper(async (req, res, next) => {
 
   const updateCandidate = await Candidate.findByIdAndUpdate(
     id,
-    { $push: { evaluator: userID, assessmentGrade: assesmentGrade } },
+    { $push: { evaluator: userID, assessmentGrade: assessmentGrade } },
     { new: true }
   );
 
