@@ -7,12 +7,14 @@ const PORT = process.env.PORT
 
 const errorHandler = require("./middlewares/errorHandler.js")
 const userRouter = require("./routes/user-route.js")
+const candidateRoute = require("./routes/candidate-route.js")
 
 
 app.use(express.json())
 
 
 app.use("/user", userRouter)
+app.use("/candidate", candidateRoute)
 
 
 app.use(errorHandler)
