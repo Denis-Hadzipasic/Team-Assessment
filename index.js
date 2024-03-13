@@ -12,10 +12,6 @@ const userRouter = require("./routes/user-route.js")
 app.use(express.json())
 
 
-// app.get("/", (req, res) => {
-//     res.send("Hello World!")
-// })
-
 app.use("/user", userRouter)
 
 
