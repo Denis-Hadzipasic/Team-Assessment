@@ -7,3 +7,5 @@ const asyncWrapper = (requestHandler) => {
         }
     }
 }
+
+module.exports = asyncWrapper;

@@ -1,18 +1,22 @@
 require("dotenv/config")
 require("./db.js")
 
-const errorHandler = require("./middlewares/errorHandler.js")
-
 const express = require("express")
 const app = express()
 const PORT = process.env.PORT
 
+const errorHandler = require("./middlewares/errorHandler.js")
+const userRouter = require("./routes/user-route.js")
+
+
 app.use(express.json())
 
 
-app.get("/", (req, res) => {
-    res.send("Hello World!")
-})
+// app.get("/", (req, res) => {
+//     res.send("Hello World!")
+// })
+
+app.use("/user", userRouter)
 
 
 app.use(errorHandler)
