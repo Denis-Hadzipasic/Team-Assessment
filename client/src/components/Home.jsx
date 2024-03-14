@@ -2,9 +2,10 @@ import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthProvider";
 import { useForm } from "react-hook-form";
+import CandidateCard from "./CandidateCard";
 
 export default function Home() {
-  const { user, logout, login } = useContext(AuthContext);
+  const { user, logout, login, candidates } = useContext(AuthContext);
 
   const {
     register,
@@ -70,9 +71,23 @@ export default function Home() {
           </div>
         </>
       ) : (
-        <NavLink onClick={logout}>Abmelden</NavLink>
+        <>
+          <NavLink onClick={logout}>Abmelden</NavLink>
 
-        
+          {!candidates ? (
+            <p>Loading</p>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              {candidates.map((candidate) => (
+                <CandidateCard
+                  key={candidate._id}
+                  candidate={candidate}
+                  user={user}
+                />
+              ))}
+            </div>
+          )}
+        </>
       )}
     </>
   );
