@@ -4,30 +4,29 @@ const asyncWrapper = require("../utils/asyncWrapper.js");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-
 const createUser = asyncWrapper(async (req, res, next) => {
   const { logInID, password } = req.body;
 
   const user = await User.create({
     logInID,
-    password
-  })
+    password,
+  });
 
-  res.status(201).json(user)
+  res.status(201).json(user);
 });
 
-const getProfile = asyncWrapper(async(req, res, next) => {
-  const {id} = req.user
+const getProfile = asyncWrapper(async (req, res, next) => {
+  const { id } = req.user;
 
-  const user = await User.findById(id)
+  const user = await User.findById(id);
 
-  res.json(user)
-})
+  res.json(user);
+});
 
 const login = asyncWrapper(async (req, res, next) => {
   const { logInID, password } = req.body;
 
-  const user = await User.findOne({ logInID }).select("+password")
+  const user = await User.findOne({ logInID }).select("+password");
 
   if (!user) {
     throw new ErrorResponse("User does not exist!", 404);
@@ -41,7 +40,7 @@ const login = asyncWrapper(async (req, res, next) => {
 
   const payload = {
     id: user._id,
-    logInID: user.logInID
+    logInID: user.logInID,
   };
 
   const token = jwt.sign(payload, process.env.JWT_SECRET, {
@@ -61,10 +60,9 @@ const logout = asyncWrapper(async (req, res, next) => {
     .json({ success: true });
 });
 
-
 module.exports = {
   createUser,
   getProfile,
   login,
-  logout
+  logout,
 };

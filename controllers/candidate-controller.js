@@ -21,6 +21,12 @@ const getCandidate = asyncWrapper(async (req, res, next) => {
   res.json(candidate);
 });
 
+const getCandidates = asyncWrapper(async (req, res, next) => {
+  const candidates = await Candidate.find({})
+
+  res.json(candidates);
+});
+
 const updateCandidate = asyncWrapper(async (req, res, next) => {
   const { id } = req.params;
   const { assessmentGrade } = req.body;
@@ -48,4 +54,5 @@ module.exports = {
   createCandidate,
   getCandidate,
   updateCandidate,
+  getCandidates
 };
