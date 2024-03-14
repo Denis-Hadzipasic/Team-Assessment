@@ -27,7 +27,7 @@ export default function CandidateCard({ candidate, user }) {
       });
   };
 
-  const checkIfVoted = candidate.evaluator.includes(user._id);
+  const checkIfVoted = candidate?.evaluator?.includes(user._id);
 
   const handleVote = () => {
     setVoteBtn("Bestätigen");
@@ -39,8 +39,9 @@ export default function CandidateCard({ candidate, user }) {
   };
 
   return (
-    <div className="p-6 sm:p-12 dark:bg-gray-900 dark:text-gray-100 ml-auto mr-auto">
-      <form onSubmit={handleSubmit(onSubmit)} className="p-12 md:p-24">
+    <div className="dark:bg-gray-900 dark:text-gray-100 ml-auto mr-auto mt-12">
+
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
           <div className="flex flex-col">
             <h4 className="text-lg font-semibold text-center md:text-left">
