@@ -15,6 +15,9 @@ export default function Home() {
 
   const onSubmit = (data) => {
     login(data);
+    setTimeout(() => {
+      window.location.reload()
+    }, 350);
   };
 
   return (

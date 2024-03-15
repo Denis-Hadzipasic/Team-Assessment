@@ -41,7 +41,7 @@ const updateCandidate = asyncWrapper(async (req, res, next) => {
     id,
     { $push: { evaluator: userID, assessmentGrade: assessmentGrade } },
     { new: true }
-  );
+  ).populate('evaluator');
 
   if (!updateCandidate) {
     throw new ErrorResponse("Candidate not found!", 404);
