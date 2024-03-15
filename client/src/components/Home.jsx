@@ -103,7 +103,7 @@ export default function Home() {
             <p>Loading</p>
           ) : (
             <>
-              {user.role === "admin" ? (
+              {user.role === "user" ? (
                 <>
                   <div className="flex justify-end">
                     <div></div>
