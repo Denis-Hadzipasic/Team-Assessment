@@ -3,7 +3,7 @@ const { Schema, model } = require("mongoose");
 
 const userSchema = new Schema({
   logInID: { type: Number, required: true, unique: true },
-  password: { type: String, required: true, select: false }, // why is password still sent in the response?
+  password: { type: String, required: true, select: false },
   role: { type: String, enum: ["user", "admin"], default: "user" },
 });
 
@@ -14,12 +14,6 @@ userSchema.pre("save", async function (next) {
 
   next();
 });
-
-// userSchema.methods.toJSON = function() {
-//     const userObject = this.toObject();
-//     delete userObject.password;
-//     return userObject;
-// };
 
 const User = model("User", userSchema);
 

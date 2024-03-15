@@ -18,11 +18,15 @@ const getCandidate = asyncWrapper(async (req, res, next) => {
 
   const candidate = await Candidate.findById(id).populate("evaluator");
 
-  res.json(candidate);
+  if (!candidate) {
+    throw new ErrorResponse(404, "Candidate not found!");
+  } else {
+    res.json(candidate);
+  }
 });
 
 const getCandidates = asyncWrapper(async (req, res, next) => {
-  const candidates = await Candidate.find({})
+  const candidates = await Candidate.find({});
 
   res.json(candidates);
 });
@@ -41,7 +45,7 @@ const updateCandidate = asyncWrapper(async (req, res, next) => {
     id,
     { $push: { evaluator: userID, assessmentGrade: assessmentGrade } },
     { new: true }
-  ).populate('evaluator');
+  ).populate("evaluator");
 
   if (!updateCandidate) {
     throw new ErrorResponse("Candidate not found!", 404);
@@ -54,5 +58,5 @@ module.exports = {
   createCandidate,
   getCandidate,
   updateCandidate,
-  getCandidates
+  getCandidates,
 };
