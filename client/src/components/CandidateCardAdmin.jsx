@@ -18,7 +18,7 @@ export default function CandidateCardAdmin({ candidate }) {
   }
 
   return (
-    <div className="dark:bg-gray-900 dark:text-gray-100 ml-auto mr-auto mt-12 border border-gray-800 shadow-lg p-6 rounded-lg min-w-96">
+    <div className="dark:bg-gray-900 dark:text-gray-100 ml-auto mr-auto mt-12 p-6 shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] min-w-96">
       <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
         <div className="flex flex-col">
           <h4 className="text-lg font-semibold text-center md:text-left">
@@ -32,9 +32,9 @@ export default function CandidateCardAdmin({ candidate }) {
               ></div>
             </div>
           </div>
-          <p className="mt-3.5">Rating: {averageRating.toFixed(2)}</p>
+          <p className="mt-3.5">Rating: <span className="font-bold">{averageRating.toFixed(2)}</span></p>
           <p className="mt-3.5">
-            Anzahl der Bewertungen: {numericGrades.length}
+            Anzahl der Bewertungen: <span className="font-bold">{numericGrades.length}</span>
           </p>
         </div>
       </div>
