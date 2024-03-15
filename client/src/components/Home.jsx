@@ -27,7 +27,7 @@ export default function Home() {
         <>
           <div className="navbar bg-black text-white flex justify-center items-center h-full">
             <a className="btn btn-ghost text-xl">
-              Team Assessment | Rent Group München
+              Team Assessment | Rent Group München Q-1
             </a>
           </div>
 
@@ -86,7 +86,7 @@ export default function Home() {
             <div></div>
             <div className="flex items-center">
               <a className="btn btn-ghost text-xl">
-                Team Assessment | Rent Group München
+                Team Assessment | Rent Group München Q-1
               </a>
             </div>
             <div>
