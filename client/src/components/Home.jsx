@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { AuthContext } from "../context/AuthProvider";
 import { useForm } from "react-hook-form";
 import CandidateCard from "./CandidateCard";
+import CandidateCardAdmin from "./CandidateCardAdmin";
 
 export default function Home() {
   const { user, logout, login, candidates } = useContext(AuthContext);
@@ -16,7 +17,7 @@ export default function Home() {
   const onSubmit = (data) => {
     login(data);
     setTimeout(() => {
-      window.location.reload()
+      window.location.reload();
     }, 350);
   };
 
@@ -102,69 +103,129 @@ export default function Home() {
             <p>Loading</p>
           ) : (
             <>
-              <div className="flex justify-end">
-                <div></div>
-                <div className="hero flex justify-center items-center h-2/6 w-3/6 bg-cover bg-center ml-auto mr-auto text-center">
-                  <div className="max-w-xl">
-                    <p className="mt-12 ml-10">
-                      Nehmen Sie sich einen Moment Zeit, um die Arbeit Ihrer
-                      Kollegen zu bewerten. Seien Sie bitte ehrlich und bewerten
-                      Sie sie danach, wie sie Ihrer Meinung nach zu den
-                      Unternehmenszielen beitragen und wie Sie sich bei der
-                      Zusammenarbeit mit diesen Menschen fühlen.
-                      <p className="mt-6">
-                        Beachten Sie, dass diese Anfrage völlig{" "}
-                        <span className="font-bold">anonym</span> ist. 
-                        Das bedeutet, dass niemand, auch nicht die Geschäftsführer, erfährt, welche Bewertungen Sie Ihren Kollegen gegeben haben.
-                      </p>
+              {user.role === "admin" ? (
+                <>
+                  <div className="flex justify-end">
+                    <div></div>
+                    <div className="hero flex justify-center items-center h-2/6 w-3/6 bg-cover bg-center ml-auto mr-auto text-center">
+                      <div className="max-w-xl">
+                        <p className="mt-12 ml-10">
+                          Nehmen Sie sich einen Moment Zeit, um die Arbeit Ihrer
+                          Kollegen zu bewerten. Seien Sie bitte ehrlich und
+                          bewerten Sie sie danach, wie sie Ihrer Meinung nach zu
+                          den Unternehmenszielen beitragen und wie Sie sich bei
+                          der Zusammenarbeit mit diesen Menschen fühlen.
+                        </p>
+
+                        <p className="mt-6">
+                          Beachten Sie, dass diese Anfrage völlig{" "}
+                          <span className="font-bold">anonym</span> ist. Das
+                          bedeutet, dass niemand, auch nicht die
+                          Geschäftsführer, erfährt, welche Bewertungen Sie Ihren
+                          Kollegen gegeben haben.
+                        </p>
+                        <p className="mt-10 mb-6 font-bold">
+                          Skala der Bewertung
+                        </p>
+                      </div>
+                    </div>
+
+                    <p className="mr-3 mt-3 font-semibold">
+                      Anmelde-ID: {user.logInID}
+                    </p>
+                  </div>
+
+                  <div className=" ml-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <p>
+                      <span className="font-bold">1 Stern:</span> Sehr Schlecht,
+                      wird sich nicht verbessern / verändern
+                    </p>
+                    <p>
+                      <span className="font-bold">2 bis 3 Sterne:</span>{" "}
+                      Schlecht, etwas sollte sich rasch verbessern
+                    </p>
+                    <p>
+                      <span className="font-bold">4 bis 5 Sterne:</span> Im
+                      Moment nicht sehr gut, sollte sich verbessern
+                    </p>
+                    <p>
+                      <span className="font-bold">6 bis 7 Sterne:</span>{" "}
+                      Durchschnittlich, anderswo normal, mit Raum, sich zu
+                      steigern
+                    </p>
+                    <p>
+                      <span className="font-bold">8 bis 9 Sterne:</span> sehr
+                      gut, überdurchschnittlich, mit etwas Luft nach oben
+                    </p>
+                    <p>
+                      <span className="font-bold">10 Sterne:</span>{" "}
+                      Herrvorrangender Wert, weit mehr als gefordert. Perfekt!
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                    {candidates.map((candidate) => (
+                      <CandidateCard
+                        key={candidate._id}
+                        candidate={candidate}
+                        user={user}
+                      />
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="flex justify-end">
+                    <div className="hero flex justify-center items-center h-2/6 w-3/6 bg-cover bg-center ml-auto mr-auto text-center">
                       <p className="mt-10 mb-6 font-bold">
                         Skala der Bewertung
                       </p>
+                    </div>
+
+                    <p className="mr-3 mt-3 font-semibold">
+                      Anmelde-ID: {user.logInID}
                     </p>
                   </div>
-                </div>
 
-                <p className="mr-3 mt-3 font-semibold">
-                  Anmelde-ID: {user.logInID}
-                </p>
-              </div>
+                  <div className=" ml-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <p>
+                      <span className="font-bold">1 Stern:</span> Sehr Schlecht,
+                      wird sich nicht verbessern / verändern
+                    </p>
+                    <p>
+                      <span className="font-bold">2 bis 3 Sterne:</span>{" "}
+                      Schlecht, etwas sollte sich rasch verbessern
+                    </p>
+                    <p>
+                      <span className="font-bold">4 bis 5 Sterne:</span> Im
+                      Moment nicht sehr gut, sollte sich verbessern
+                    </p>
+                    <p>
+                      <span className="font-bold">6 bis 7 Sterne:</span>{" "}
+                      Durchschnittlich, anderswo normal, mit Raum, sich zu
+                      steigern
+                    </p>
+                    <p>
+                      <span className="font-bold">8 bis 9 Sterne:</span> sehr
+                      gut, überdurchschnittlich, mit etwas Luft nach oben
+                    </p>
+                    <p>
+                      <span className="font-bold">10 Sterne:</span>{" "}
+                      Herrvorrangender Wert, weit mehr als gefordert. Perfekt!
+                    </p>
+                  </div>
 
-              <div className=" ml-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <p>
-                  <span className="font-bold">1 Stern:</span> Sehr Schlecht,
-                  wird sich nicht verbessern / verändern
-                </p>
-                <p>
-                  <span className="font-bold">2 bis 3 Sterne:</span> Schlecht,
-                  etwas sollte sich rasch verbessern
-                </p>
-                <p>
-                  <span className="font-bold">4 bis 5 Sterne:</span> Im Moment
-                  nicht sehr gut, sollte sich verbessern
-                </p>
-                <p>
-                  <span className="font-bold">6 bis 7 Sterne:</span>{" "}
-                  Durchschnittlich, anderswo normal, mit Raum, sich zu steigern
-                </p>
-                <p>
-                  <span className="font-bold">8 bis 9 Sterne:</span> sehr gut,
-                  überdurchschnittlich, mit etwas Luft nach oben
-                </p>
-                <p>
-                  <span className="font-bold">10 Sterne:</span> Herrvorrangender
-                  Wert, weit mehr als gefordert. Perfekt!
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                {candidates.map((candidate) => (
-                  <CandidateCard
-                    key={candidate._id}
-                    candidate={candidate}
-                    user={user}
-                  />
-                ))}
-              </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                    {candidates.map((candidate) => (
+                      <CandidateCardAdmin
+                        key={candidate._id}
+                        candidate={candidate}
+                        user={user}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
             </>
           )}
         </>
