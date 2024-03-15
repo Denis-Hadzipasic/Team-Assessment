@@ -92,7 +92,7 @@ export default function Home() {
             <div>
               <NavLink
                 onClick={logout}
-                className="bg-white text-black py-2 px-4 rounded font-bold"
+                className="bg-[#ffffff] border-2 border-[#3e3e3e] rounded-lg text-black font-bold px-4 py-1.5 text-base hover:border-[#fff] cursor-pointer transition ml-3"
               >
                 Abmelden
               </NavLink>

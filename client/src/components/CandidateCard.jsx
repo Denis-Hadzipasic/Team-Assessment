@@ -45,7 +45,7 @@ export default function CandidateCard({ candidate, user }) {
   };
 
   return (
-    <div className="dark:bg-gray-900 dark:text-gray-100 ml-auto mr-auto mt-12">
+    <div className="dark:bg-gray-900 dark:text-gray-100 ml-auto mr-auto mt-12 border border-gray-800 shadow-lg p-6 rounded-lg min-w-96">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
           <div className="flex flex-col">

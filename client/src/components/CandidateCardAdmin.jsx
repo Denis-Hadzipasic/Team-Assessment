@@ -18,14 +18,14 @@ export default function CandidateCardAdmin({ candidate }) {
   }
 
   return (
-    <div className="dark:bg-gray-900 dark:text-gray-100 ml-auto mr-auto mt-12">
+    <div className="dark:bg-gray-900 dark:text-gray-100 ml-auto mr-auto mt-12 border border-gray-800 shadow-lg p-6 rounded-lg min-w-96">
       <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
         <div className="flex flex-col">
           <h4 className="text-lg font-semibold text-center md:text-left">
             {candidate.lastName + " " + candidate.firstName + ":"}
           </h4>
           <div className="rating mt-3">
-            <div className="w-full bg-gray-200 rounded-lg overflow-hidden">
+            <div className="min-w-80 bg-gray-200 rounded-lg overflow-hidden">
               <div
                 className={`h-4 ${color}`}
                 style={{ width: `${averageRating * 10}%` }}
