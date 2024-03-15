@@ -20,7 +20,11 @@ const getProfile = asyncWrapper(async (req, res, next) => {
 
   const user = await User.findById(id);
 
-  res.json(user);
+  if (!user) {
+    throw new ErrorResponse(404, "User not found!");
+  } else {
+    res.json(user);
+  }
 });
 
 const login = asyncWrapper(async (req, res, next) => {
@@ -41,7 +45,7 @@ const login = asyncWrapper(async (req, res, next) => {
   const payload = {
     id: user._id,
     logInID: user.logInID,
-    role: user.role
+    role: user.role,
   };
 
   const token = jwt.sign(payload, process.env.JWT_SECRET, {

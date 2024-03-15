@@ -8,28 +8,35 @@ export default function AuthProvider({ children }) {
   const [candidates, setCandidates] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-
   useEffect(() => {
-    axiosClient.get("/user/profile").then((response) => {
-        setUser(response.data)
-        console.log(response.data)
-    }).catch((error) => {
-        console.log(error)
-        setUser(null)
-    }).finally(() => {
-        setIsLoading(false)
-    })
+    axiosClient
+      .get("/user/profile")
+      .then((response) => {
+        setUser(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+        setUser(null);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
 
-    axiosClient.get("/candidate/candidateList").then((response) => {
-      setCandidates(response.data)
-      console.log(response.data)
-  }).catch((error) => {
-      console.log(error)
-      setCandidates(null)
-  }).finally(() => {
-      setIsLoading(false)
-  })
-  }, [])
+    axiosClient
+      .get("/candidate/candidateList")
+      .then((response) => {
+        setCandidates(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+        setCandidates(null);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, []);
 
   const login = async (data) => {
     axiosClient
@@ -65,7 +72,7 @@ export default function AuthProvider({ children }) {
           logout,
           user,
           candidates,
-          isLoading
+          isLoading,
         }}
       >
         {children}

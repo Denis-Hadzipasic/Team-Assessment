@@ -3,7 +3,7 @@ import axiosClient from "../utils/axiosClient";
 import { useState } from "react";
 
 export default function CandidateCard({ candidate, user }) {
-  const [btnHidden, setBtnHidden] = useState(false)
+  const [btnHidden, setBtnHidden] = useState(false);
   const [voteBtn, setVoteBtn] = useState("Bewerten");
   const [voteBtnStatus, setVoteBtnStatus] = useState(true);
   const [voteBtnClass, setVoteBtnClass] = useState(
@@ -21,9 +21,11 @@ export default function CandidateCard({ candidate, user }) {
         withCredentials: true,
       })
       .then((response) => {
-        setBtnHidden(true)
-        setVoteBtn("Übermittelt")
-        setVoteBtnClass("bg-green-600 border-2 border-green-400 rounded-lg text-slate-50 px-4 py-1.5 mt-4 text-base cursor-not-allowed transition")
+        setBtnHidden(true);
+        setVoteBtn("Übermittelt");
+        setVoteBtnClass(
+          "bg-green-600 border-2 border-green-400 rounded-lg text-slate-50 px-4 py-1.5 mt-4 text-base cursor-not-allowed transition"
+        );
         console.log(response.data);
       })
       .catch((error) => {
@@ -44,7 +46,6 @@ export default function CandidateCard({ candidate, user }) {
 
   return (
     <div className="dark:bg-gray-900 dark:text-gray-100 ml-auto mr-auto mt-12">
-
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
           <div className="flex flex-col">
