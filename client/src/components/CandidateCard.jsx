@@ -3,6 +3,7 @@ import axiosClient from "../utils/axiosClient";
 import { useState } from "react";
 
 export default function CandidateCard({ candidate, user }) {
+  const [btnHidden, setBtnHidden] = useState(false)
   const [voteBtn, setVoteBtn] = useState("Bewerten");
   const [voteBtnStatus, setVoteBtnStatus] = useState(true);
   const [voteBtnClass, setVoteBtnClass] = useState(
@@ -20,6 +21,9 @@ export default function CandidateCard({ candidate, user }) {
         withCredentials: true,
       })
       .then((response) => {
+        setBtnHidden(true)
+        setVoteBtn("Übermittelt")
+        setVoteBtnClass("bg-green-600 border-2 border-green-400 rounded-lg text-slate-50 px-4 py-1.5 mt-4 text-base cursor-not-allowed transition")
         console.log(response.data);
       })
       .catch((error) => {
@@ -78,6 +82,7 @@ export default function CandidateCard({ candidate, user }) {
               type="submit"
               value={"Keine Meinung"}
               className="bg-[#292929] border-2 border-[#3e3e3e] rounded-lg text-white px-4 py-1.5 mt-4 text-base hover:border-[#fff] cursor-pointer transition ml-3"
+              hidden={btnHidden}
             />
           )}
           {checkIfVoted && (
