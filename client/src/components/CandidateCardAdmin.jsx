@@ -1,13 +1,16 @@
 export default function CandidateCardAdmin({ candidate }) {
+
   const numericGrades = candidate.assessmentGrade
     .map((grade) => parseFloat(grade))
     .filter((grade) => !isNaN(grade));
 
   const sumOfGrades = numericGrades.reduce((acc, curr) => acc + curr, 0);
   const averageRating = sumOfGrades / numericGrades.length;
-
+  
   let color = "";
-  if (averageRating < 3) {
+  if(isNaN(averageRating)) {
+    color = "bg-gray-300"
+  } else if (averageRating < 3) {
     color = "bg-red-400";
   } else if (averageRating >= 3 && averageRating < 7) {
     color = "bg-yellow-400";
@@ -24,6 +27,9 @@ export default function CandidateCardAdmin({ candidate }) {
           <h4 className="text-lg font-semibold text-center md:text-left">
             {candidate.lastName + " " + candidate.firstName + ":"}
           </h4>
+          <p className="text-md text-gray-400 text-center md:text-left">
+            {candidate.department + " / " + candidate.position}
+          </p>
           <div className="rating mt-3">
             <div className="min-w-80 bg-gray-200 rounded-lg overflow-hidden">
               <div
@@ -32,9 +38,13 @@ export default function CandidateCardAdmin({ candidate }) {
               ></div>
             </div>
           </div>
-          <p className="mt-3.5">Rating: <span className="font-bold">{averageRating.toFixed(2)}</span></p>
           <p className="mt-3.5">
-            Anzahl der Bewertungen: <span className="font-bold">{numericGrades.length}</span>
+            Rating:{" "}
+            {isNaN(averageRating) ? <span className="font-bold">Noch keine Bewertung</span> : <span className="font-bold">{averageRating.toFixed(2)}</span>}
+          </p>
+          <p className="mt-3.5">
+            Anzahl der Bewertungen:{" "}
+            <span className="font-bold">{numericGrades.length}</span>
           </p>
         </div>
       </div>

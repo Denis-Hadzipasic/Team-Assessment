@@ -3,11 +3,13 @@ const ErrorResponse = require("../utils/errorResponse.js");
 const asyncWrapper = require("../utils/asyncWrapper.js");
 
 const createCandidate = asyncWrapper(async (req, res, next) => {
-  const { firstName, lastName } = req.body;
+  const { firstName, lastName, position, department } = req.body;
 
   const candidate = await Candidate.create({
     firstName,
     lastName,
+    position,
+    department,
   });
 
   res.status(201).json(candidate);
