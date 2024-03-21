@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import axiosClient from "../utils/axiosClient";
+import { badCredentials } from "../utils/badCredentials";
 
 export const AuthContext = createContext();
 
@@ -43,9 +44,13 @@ export default function AuthProvider({ children }) {
       .post("/user/login", data)
       .then((response) => {
         setUser(response.data);
+        setTimeout(() => {
+          window.location.reload();
+        }, 350);
       })
       .catch((error) => {
         console.log(error);
+        badCredentials()
         setUser(null);
       })
       .finally(() => {

@@ -16,28 +16,42 @@ export default function Home() {
 
   const onSubmit = (data) => {
     login(data);
-    setTimeout(() => {
-      window.location.reload();
-    }, 350);
   };
 
   return (
     <>
       {!user ? (
         <>
+          <dialog id="my_modal_1" className="modal">
+            <div className="modal-box">
+              <div role="alert">
+                <div className="bg-red-500 text-white font-bold rounded-t px-4 py-2">
+                  Error
+                </div>
+                <div className="border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
+                  <p>Ungültiger Login-ID und/oder Kennwort!</p>
+                  <br />
+                  <p>Bitte versuchen Sie es erneut</p>
+                </div>
+              </div>
+              <div className="modal-action">
+                <form method="dialog">
+                  <button className="btn">Close</button>
+                </form>
+              </div>{" "}
+            </div>{" "}
+          </dialog>{" "}
           <div className="navbar bg-black text-white flex justify-center items-center h-full">
             <a className="btn btn-ghost text-xl">
               Team Assessment | Rent Group München Q-1
             </a>
           </div>
-
           <div className="hero flex justify-center items-center h-2/6 w-2/6 bg-cover bg-center ml-auto mr-auto">
             <img
               src="https://d2nk66epwbpimf.cloudfront.net/images/345249fd-0959-4762-bfbc-80ca4247abbb/54ad38e7-f4b4-4dc6-9e80-21e06958a192.png"
               alt="logo"
             />
           </div>
-
           <div className="hero flex justify-center items-center h-2/6 w-2/6 bg-cover bg-center ml-auto mr-auto text-center">
             <div className="max-w-md">
               <p>
@@ -131,7 +145,8 @@ export default function Home() {
                     </div>
 
                     <p className="mr-3 mt-3 font-semibold">
-                      Anmelde-ID: <span className="font-bold">{user.logInID}</span>
+                      Anmelde-ID:{" "}
+                      <span className="font-bold">{user.logInID}</span>
                     </p>
                   </div>
 
