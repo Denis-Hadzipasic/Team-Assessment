@@ -12,6 +12,7 @@ export default function CandidateCard({ candidate, user }) {
   const [selectedGrade, setSelectedGrade] = useState({
     "--tw-bg-opacity": "0.2",
   });
+  const [showModal, setShowModal] = useState(false);
 
   const { register, handleSubmit } = useForm();
 
@@ -26,6 +27,7 @@ export default function CandidateCard({ candidate, user }) {
         setVoteBtnClass(
           "bg-green-600 border-2 border-green-400 rounded-lg text-slate-50 px-4 py-1.5 mt-4 text-base cursor-not-allowed transition"
         );
+        setShowModal(false);
         console.log(response.data);
       })
       .catch((error) => {
@@ -82,12 +84,68 @@ export default function CandidateCard({ candidate, user }) {
             />
           )}
           {!checkIfVoted && (
-            <input
-              type="submit"
-              value={"Keine Meinung"}
-              className="bg-[#292929] border-2 border-[#3e3e3e] rounded-lg text-white px-4 py-1.5 mt-4 text-base hover:border-[#fff] cursor-pointer transition ml-3"
-              hidden={btnHidden}
-            />
+            <>
+              <button
+                className="bg-[#292929] border-2 border-[#3e3e3e] rounded-lg text-white px-4 py-1.5 mt-4 text-base hover:border-[#fff] cursor-pointer transition ml-3"
+                type="button"
+                onClick={() => setShowModal(true)}
+                hidden={btnHidden}
+              >
+                Keine Meinung
+              </button>
+              {showModal ? (
+                <>
+                  <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+                    <div className="relative my-6 mx-auto max-w-xl">
+                      <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                        <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+                          <div role="alert" className="alert alert-warning ">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="stroke-current shrink-0 h-6 w-6"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                              />
+                            </svg>
+                            <span>Achtung: Bewertung ohne Meinung!</span>
+                          </div>
+                        </div>
+                        <div className="relative p-4 flex-auto">
+                          <p className="my-2 text-blueGray-500 text-lg leading-relaxed">
+                            Möchten Sie den{" "}
+                            <span className="font-bold">
+                              {candidate.firstName + " " + candidate.lastName}{" "}
+                            </span>
+                            wirklich ohne Meinung bewerten?
+                          </p>
+                        </div>
+                        <div className="flex items-center justify-end pr-4 pb-4 border-t border-solid border-blueGray-200 rounded-b">
+                          <button
+                            className="bg-[#FF2222] border-2 border-[#FB5252] rounded-lg text-white px-4 py-1.5 mt-4 text-base hover:border-[#fff] cursor-pointer transition ml-3"
+                            type="button"
+                            onClick={() => setShowModal(false)}
+                          >
+                            Abrechen
+                          </button>
+                          <input
+                            type="submit"
+                            value={"Bestätigen"}
+                            className="bg-[#292929] border-2 border-[#3e3e3e] rounded-lg text-white px-4 py-1.5 mt-4 text-base hover:border-[#fff] cursor-pointer transition ml-3"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+                </>
+              ) : null}
+            </>
           )}
           {checkIfVoted && (
             <input
