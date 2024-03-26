@@ -21,7 +21,7 @@ export default function CandidateCardAdmin({ candidate }) {
   }
 
   return (
-    <div className="dark:bg-gray-900 dark:text-gray-100 ml-auto mr-auto mt-12 p-6 shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] min-w-96">
+    <div className="lg:w-5/6 dark:bg-gray-900 dark:text-gray-100 mr-4 ml-4 mt-12 mb-2 p-6 shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]">
       <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
         <div className="flex flex-col">
           <h4 className="text-lg font-semibold text-center md:text-left">
@@ -31,7 +31,7 @@ export default function CandidateCardAdmin({ candidate }) {
             {candidate.department}
           </p>
           <div className="rating mt-3">
-            <div className="min-w-80 bg-gray-200 rounded-lg overflow-hidden">
+            <div className="min-w-72 lg:min-w-80 bg-gray-200 rounded-lg overflow-hidden">
               <div
                 className={`h-4 ${color}`}
                 style={{ width: `${averageRating * 10}%` }}
