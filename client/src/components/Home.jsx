@@ -265,7 +265,7 @@ export default function Home() {
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                  <div className="grid center grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 lg:ml-8">
                     {candidates.map((candidate) => (
                       <CandidateCardAdmin
                         key={candidate._id}
