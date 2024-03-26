@@ -10,11 +10,11 @@ export default function CandidateCardAdmin({ candidate }) {
   let color = "";
   if(isNaN(averageRating)) {
     color = "bg-gray-300"
-  } else if (averageRating < 3) {
+  } else if (averageRating <= 3) {
     color = "bg-red-400";
-  } else if (averageRating >= 3 && averageRating < 7) {
+  } else if (averageRating > 3 && averageRating < 7) {
     color = "bg-yellow-400";
-  } else if (averageRating >= 7 && averageRating < 10) {
+  } else if (averageRating >= 7 && averageRating < 9) {
     color = "bg-blue-400";
   } else {
     color = "bg-green-400";
