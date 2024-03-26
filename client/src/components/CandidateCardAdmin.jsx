@@ -28,7 +28,7 @@ export default function CandidateCardAdmin({ candidate }) {
             {candidate.lastName + " " + candidate.firstName + ":"}
           </h4>
           <p className="text-md text-gray-400 text-center md:text-left">
-            {candidate.department + " / " + candidate.position}
+            {candidate.department}
           </p>
           <div className="rating mt-3">
             <div className="min-w-80 bg-gray-200 rounded-lg overflow-hidden">

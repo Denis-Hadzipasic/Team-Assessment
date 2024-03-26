@@ -55,7 +55,7 @@ export default function CandidateCard({ candidate, user }) {
               {candidate.lastName + " " + candidate.firstName + ":"}
             </h4>
             <p className="text-md text-gray-400 text-center md:text-left">
-              {candidate.department + " / " + candidate.position}
+              {candidate.department}
             </p>
             <div className="rating mt-3">
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((value) => (
