@@ -42,7 +42,7 @@ export default function Home() {
             </div>{" "}
           </dialog>{" "}
           <div className="navbar bg-black text-white flex justify-center items-center h-full">
-            <a className="btn btn-ghost text-xl">
+            <a className="btn btn-ghost text-md lg:text-xl">
               Team Assessment | Rent Group München Q-1
             </a>
           </div>
@@ -52,12 +52,12 @@ export default function Home() {
               alt="logo"
             />
           </div>
-          <div className="hero flex justify-center items-center h-2/6 w-2/6 bg-cover bg-center ml-auto mr-auto text-center">
-            <div className="max-w-md">
+          <div className="hero flex justify-center items-center h-2/6 w-4/6 bg-cover bg-center ml-auto mr-auto text-center lg:w-3/12">
+            <div>
               <p>
-                Nehmen Sie sich einen Moment Zeit, um Ihre Kollegen zu bewerten.
-                Melden Sie sich mit den Zugangsdaten an, die Sie von Ihrer
-                Personalabteilung erhalten haben.
+                Nimm dir einen Moment Zeit, um deine Kollegen zu bewerten. Melde
+                dich mit den Zugangsdaten an, die du von deiner
+                Personalabteilung erhalten hast!
               </p>
             </div>
           </div>
@@ -99,14 +99,14 @@ export default function Home() {
           <div className="navbar bg-black text-white flex justify-between items-center h-full px-4">
             <div></div>
             <div className="flex items-center">
-              <a className="btn btn-ghost text-xl">
+              <a className="btn btn-ghost text-md lg:text-lg">
                 Team Assessment | Rent Group München Q-1
               </a>
             </div>
             <div>
               <NavLink
                 onClick={logout}
-                className="bg-[#ffffff] border-2 border-[#3e3e3e] rounded-lg text-black font-bold px-4 py-1.5 text-base hover:border-[#fff] cursor-pointer transition ml-3"
+                className="hidden lg:inline bg-[#ffffff] border-2 border-[#3e3e3e] rounded-lg text-black font-bold px-4 py-1.5 text-base hover:border-[#fff] cursor-pointer transition ml-3"
               >
                 Abmelden
               </NavLink>
@@ -121,36 +121,62 @@ export default function Home() {
                 <>
                   <div className="flex justify-end">
                     <div></div>
-                    <div className="hero flex justify-center items-center h-2/6 w-3/6 bg-cover bg-center ml-auto mr-auto text-center">
-                      <div className="max-w-xl">
-                        <p className="mt-12 ml-10">
-                          Nehmen Sie sich einen Moment Zeit, um die Arbeit Ihrer
-                          Kollegen zu bewerten. Seien Sie bitte ehrlich und
-                          bewerten Sie sie danach, wie sie Ihrer Meinung nach zu
-                          den Unternehmenszielen beitragen und wie Sie sich bei
-                          der Zusammenarbeit mit diesen Menschen fühlen.
+                    <div className="hero flex justify-center items-center h-2/6 w-6/6 mt-6 bg-cover bg-center ml-auto mr-auto text-center lg:w-4/12">
+                      <div className="max-w-xxl">
+                        <div className="hero flex justify-center items-center h-2/6 w-2/6 bg-cover bg-center ml-auto mr-auto lg:w-3/6">
+                          <img
+                            className="hidden lg:inline"
+                            src="https://d2nk66epwbpimf.cloudfront.net/images/345249fd-0959-4762-bfbc-80ca4247abbb/54ad38e7-f4b4-4dc6-9e80-21e06958a192.png"
+                            alt="logo"
+                          />
+                        </div>
+                        <NavLink
+                          onClick={logout}
+                          className="inline xl:hidden bg-[#ffffff] border-2 border-[#3e3e3e] rounded-lg text-black font-bold px-4 py-1.5 text-base hover:border-[#FFA353] cursor-pointer transition ml-3"
+                        >
+                          Abmelden
+                        </NavLink>
+                        <p className="sm: mt-6 ml-4 mr-4 lg:mt-0">
+                          Liebes Team, bei dem Team Assessment geht es darum,
+                          das persönliche Engagement unserer Mitarbeiter zu
+                          bewerten. Erwartbare Ergebnisse werden hierbei nicht
+                          berücksichtigt, da diese bereits im Grundgehalt der
+                          einzelnen Mitarbeiter verankert sind.{" "}
                         </p>
-
-                        <p className="mt-6">
-                          Beachten Sie, dass diese Anfrage völlig{" "}
-                          <span className="font-bold">anonym</span> ist. Das
+                        <p className="mt-6 ml-4 mr-4">
+                          Du bewertest Einsatzbereitschaft, Engagement, den
+                          persönlichen Beitrag zu Gruppenzielen, die
+                          Bereitschaft anderen zu helfen, die Teamfähigkeit, die
+                          ehrliche Bemühung, dem Kunden zu helfen,
+                          Qualitätsbewusstsein, das Leben unserer Werte. Also
+                          grundsätzlich die Dinge, die wir als Unternehmen
+                          anstreben.
+                        </p>{" "}
+                        <p className="mt-6 ml-4 mr-4">
+                          Bitte mach dir bewusst, dass es nicht darum geht, ob
+                          du den Lebensstil oder den Charakter des Mitarbeiter
+                          magst oder nicht.
+                        </p>
+                        <p className="mt-6 ml-4 mr-4">
+                          Diese Anfrage ist völlig{" "}
+                          <span className="font-bold">anonym</span>. Das
                           bedeutet, dass niemand, auch nicht die
-                          Geschäftsführer, erfährt, welche Bewertungen Sie Ihren
-                          Kollegen gegeben haben.
+                          Geschäftsführer, erfährt, welche Bewertungen du deinen
+                          Kollegen gegeben hast.
                         </p>
-                        <p className="mt-10 mb-6 font-bold">
+                        <p className="mt-10 ml-4 mr-4 mb-6 font-bold">
                           Skala der Bewertung
                         </p>
                       </div>
                     </div>
 
-                    <p className="mr-3 mt-3 font-semibold">
+                    <p className="hidden lg:inline  mr-3 mt-3 font-semibold">
                       Anmelde-ID:{" "}
                       <span className="font-bold">{user.logInID}</span>
                     </p>
                   </div>
 
-                  <div className=" ml-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                  <div className=" mr-6 ml-6 lg:ml-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     <p>
                       <span className="font-bold">1 Stern:</span> Sehr Schlecht,
                       wird sich nicht verbessern / verändern

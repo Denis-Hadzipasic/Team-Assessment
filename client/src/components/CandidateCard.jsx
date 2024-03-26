@@ -47,7 +47,7 @@ export default function CandidateCard({ candidate, user }) {
   };
 
   return (
-    <div className="dark:bg-gray-900 dark:text-gray-100 ml-auto mr-auto mt-12 p-6 shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] min-w-96">
+    <div className="lg:w-5/6 dark:bg-gray-900 dark:text-gray-100 ml-auto mr-auto mt-12 mb-2 p-6 shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
           <div className="flex flex-col">
@@ -74,7 +74,7 @@ export default function CandidateCard({ candidate, user }) {
             </div>
           </div>
         </div>
-        <div>
+        <div className="flex justify-center lg:justify-start">
           {!checkIfVoted && (
             <input
               type="submit"
@@ -95,7 +95,7 @@ export default function CandidateCard({ candidate, user }) {
               </button>
               {showModal ? (
                 <>
-                  <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+                  <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none ml-3 mr-3">
                     <div className="relative my-6 mx-auto max-w-xl">
                       <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                         <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
@@ -117,8 +117,8 @@ export default function CandidateCard({ candidate, user }) {
                           </div>
                         </div>
                         <div className="relative p-4 flex-auto">
-                          <p className="my-2 text-blueGray-500 text-lg leading-relaxed">
-                            Möchten Sie den{" "}
+                          <p className="lg:my-2 text-blueGray-500 text-lg leading-relaxed">
+                            Willst du den{" "}
                             <span className="font-bold">
                               {candidate.firstName + " " + candidate.lastName}{" "}
                             </span>
