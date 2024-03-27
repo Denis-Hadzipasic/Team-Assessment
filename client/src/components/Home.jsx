@@ -122,6 +122,7 @@ export default function Home() {
                   <p className="hidden lg:flex justify-end  mr-3 mt-3 font-semibold">
                     Anmelde ID: <span className="font-bold ml-1">{" " + user.logInID}</span>
                   </p>
+
                   <div className="flex justify-end">
                     <div></div>
                     <div className="hero flex justify-center items-center h-2/6 w-6/6 mt-6 bg-cover bg-center ml-auto mr-auto text-center lg:w-4/12">
@@ -214,6 +215,14 @@ export default function Home() {
                 </>
               ) : (
                 <>
+                
+                    <p className="hidden lg:flex justify-end mr-3 mt-3 font-semibold">
+                      Anmelde ID:
+                      <span className="font-bold ml-1">{" " + user.logInID}</span>
+                    </p>
+                    <p className="text-md flex justify-end mr-3 text-gray-400 text-center md:text-left">
+                      Administrator
+          </p>
                   <div className="mt-6 flex justify-center">
                     <NavLink
                       onClick={logout}
@@ -230,10 +239,6 @@ export default function Home() {
                       </p>
                     </div>
 
-                    <p className="hidden lg:inline mr-3 mt-3 font-semibold">
-                      Anmelde ID:
-                      <span className="font-bold">{" " + user.logInID}</span>
-                    </p>
                   </div>
 
                   <div className="mr-4 ml-4 lg:ml-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

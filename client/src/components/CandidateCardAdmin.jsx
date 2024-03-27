@@ -31,7 +31,7 @@ export default function CandidateCardAdmin({ candidate }) {
             {candidate.department}
           </p>
           <div className="rating mt-3">
-            <div className="w-72 lg:w-60 bg-gray-200 rounded-lg overflow-hidden">
+            <div className="w-80 lg:w-60 bg-gray-200 rounded-lg overflow-hidden">
               <div
                 className={`h-4 ${color}`}
                 style={{ width: `${averageRating * 10}%` }}
