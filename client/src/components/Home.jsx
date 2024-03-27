@@ -168,17 +168,11 @@ export default function Home() {
                       <div className="max-w-xxl">
                         <div className="hero flex justify-center items-center h-2/6 w-2/6 bg-cover bg-center ml-auto mr-auto lg:w-3/6">
                           <img
-                            className="hidden lg:inline"
+                            className="inline"
                             src="https://d2nk66epwbpimf.cloudfront.net/images/345249fd-0959-4762-bfbc-80ca4247abbb/54ad38e7-f4b4-4dc6-9e80-21e06958a192.png"
                             alt="logo"
                           />
                         </div>
-                        <NavLink
-                          onClick={logout}
-                          className="inline xl:hidden bg-[#ffffff] border-2 border-[#3e3e3e] rounded-lg text-black font-bold px-4 py-1.5 text-base hover:border-[#FFA353] cursor-pointer transition ml-3"
-                        >
-                          Abmelden
-                        </NavLink>
                         <p className="sm: mt-6 ml-4 mr-4 lg:mt-0">
                           Liebes Team, bei dem Team Assessment geht es darum,
                           das persönliche Engagement unserer Mitarbeiter zu
@@ -258,17 +252,10 @@ export default function Home() {
                     Anmelde ID:
                     <span className="font-bold ml-1">{" " + user.logInID}</span>
                   </p>
+
                   <p className="hidden lg:text-md flex justify-end mr-3 text-gray-400 text-center md:text-left">
                     Administrator
                   </p>
-                  <div className="mt-6 flex justify-center">
-                    <NavLink
-                      onClick={logout}
-                      className="inline xl:hidden bg-[#ffffff] border-2 border-[#3e3e3e] rounded-lg text-black font-bold px-4 py-1.5 text-base hover:border-[#FFA353] cursor-pointer transition ml-3"
-                    >
-                      Abmelden
-                    </NavLink>
-                  </div>
 
                   <div className="flex justify-end">
                     <div className="hero flex justify-center items-center h-2/6 w-3/6 bg-cover bg-center ml-auto mr-auto text-center">
