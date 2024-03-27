@@ -111,6 +111,44 @@ export default function Home() {
                 Abmelden
               </NavLink>
             </div>
+            <div className="lg:hidden flex justify-end drawer drawer-end">
+              <input
+                id="my-drawer-4"
+                type="checkbox"
+                className="drawer-toggle"
+              />
+              <div className="drawer-content">
+                <label htmlFor="my-drawer-4">
+                  {" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5.636 5.636a9 9 0 1 0 12.728 0M12 3v9"
+                    />
+                  </svg>
+                </label>
+              </div>
+              <div className="drawer-side">
+                <label
+                  htmlFor="my-drawer-4"
+                  aria-label="close sidebar"
+                  className="drawer-overlay"
+                ></label>
+                <ul className="menu p-3.5 w-32 bg-base-200 text-base-content">
+                  <li>
+                    <a onClick={logout}>Abmelden</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
 
           {!candidates ? (
