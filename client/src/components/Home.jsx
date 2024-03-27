@@ -46,7 +46,7 @@ export default function Home() {
               Team Assessment | Rent Group München Q-1
             </a>
           </div>
-          <div className="mt-6 hero flex justify-center items-center h-2/6 w-5/6 bg-cover bg-center ml-auto mr-auto lg:w-2/6">
+          <div className="mt-6 hero flex justify-center items-center h-2/6 w-5/6 bg-cover bg-center ml-auto mr-auto lg:w-3/12 mt-0">
             <img
               src="https://d2nk66epwbpimf.cloudfront.net/images/345249fd-0959-4762-bfbc-80ca4247abbb/54ad38e7-f4b4-4dc6-9e80-21e06958a192.png"
               alt="logo"
@@ -99,7 +99,7 @@ export default function Home() {
           <div className="navbar bg-black text-white flex justify-between items-center h-full px-4">
             <div></div>
             <div className="flex items-center">
-              <a className="btn btn-ghost text-md lg:text-lg">
+              <a className="ml-0 btn btn-ghost text-md lg:text-lg lg:ml-32">
                 Team Assessment | Rent Group München Q-1
               </a>
             </div>
@@ -119,6 +119,9 @@ export default function Home() {
             <>
               {user.role === "user" ? (
                 <>
+                  <p className="hidden lg:flex justify-end  mr-3 mt-3 font-semibold">
+                    Anmelde ID: <span className="font-bold ml-1">{" " + user.logInID}</span>
+                  </p>
                   <div className="flex justify-end">
                     <div></div>
                     <div className="hero flex justify-center items-center h-2/6 w-6/6 mt-6 bg-cover bg-center ml-auto mr-auto text-center lg:w-4/12">
@@ -169,11 +172,6 @@ export default function Home() {
                         </p>
                       </div>
                     </div>
-
-                    <p className="hidden lg:inline  mr-3 mt-3 font-semibold">
-                      Anmelde-ID:{" "}
-                      <span className="font-bold">{user.logInID}</span>
-                    </p>
                   </div>
 
                   <div className=" mr-6 ml-6 lg:ml-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -233,7 +231,8 @@ export default function Home() {
                     </div>
 
                     <p className="hidden lg:inline mr-3 mt-3 font-semibold">
-                      Anmelde-ID: {user.logInID}
+                      Anmelde ID:
+                      <span className="font-bold">{" " + user.logInID}</span>
                     </p>
                   </div>
 

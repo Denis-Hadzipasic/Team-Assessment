@@ -47,7 +47,7 @@ export default function CandidateCard({ candidate, user }) {
   };
 
   return (
-    <div className="lg:w-5/6 dark:bg-gray-900 dark:text-gray-100 ml-auto mr-auto mt-12 mb-2 p-6 shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]">
+    <div className="dark:bg-gray-900 dark:text-gray-100 ml-auto mr-auto mt-12 mb-2 p-8 shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
           <div className="flex flex-col">
