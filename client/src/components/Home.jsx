@@ -120,7 +120,8 @@ export default function Home() {
               {user.role === "user" ? (
                 <>
                   <p className="hidden lg:flex justify-end  mr-3 mt-3 font-semibold">
-                    Anmelde ID: <span className="font-bold ml-1">{" " + user.logInID}</span>
+                    Anmelde ID:{" "}
+                    <span className="font-bold ml-1">{" " + user.logInID}</span>
                   </p>
 
                   <div className="flex justify-end">
@@ -215,14 +216,13 @@ export default function Home() {
                 </>
               ) : (
                 <>
-                
-                    <p className="hidden lg:flex justify-end mr-3 mt-3 font-semibold">
-                      Anmelde ID:
-                      <span className="font-bold ml-1">{" " + user.logInID}</span>
-                    </p>
-                    <p className="text-md flex justify-end mr-3 text-gray-400 text-center md:text-left">
-                      Administrator
-          </p>
+                  <p className="hidden lg:flex justify-end mr-3 mt-3 font-semibold">
+                    Anmelde ID:
+                    <span className="font-bold ml-1">{" " + user.logInID}</span>
+                  </p>
+                  <p className="hidden lg:text-md flex justify-end mr-3 text-gray-400 text-center md:text-left">
+                    Administrator
+                  </p>
                   <div className="mt-6 flex justify-center">
                     <NavLink
                       onClick={logout}
@@ -238,7 +238,6 @@ export default function Home() {
                         Skala der Bewertung
                       </p>
                     </div>
-
                   </div>
 
                   <div className="mr-4 ml-4 lg:ml-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
