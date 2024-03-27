@@ -29,8 +29,7 @@ export default function Home() {
                   Error
                 </div>
                 <div className="border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
-                  <p>Ungültiger Login-ID und/oder Kennwort!</p>
-                  <br />
+                  <p>Ungültiger ID und/oder Kennwort!</p>
                   <p>Bitte versuch es erneut!</p>
                 </div>
               </div>
@@ -43,7 +42,7 @@ export default function Home() {
           </dialog>{" "}
           <div className="navbar bg-black text-white flex justify-center items-center h-full">
             <a className="btn btn-ghost text-md lg:text-xl">
-              Team Assessment | Rent Group München Q-1
+              Team Assessment | RG München Q-1
             </a>
           </div>
           <div className="mt-6 hero flex justify-center items-center h-2/6 w-5/6 bg-cover bg-center ml-auto mr-auto lg:w-3/12 mt-0">
@@ -54,7 +53,7 @@ export default function Home() {
           </div>
           <div className="hero flex justify-center items-center h-2/6 w-4/6 bg-cover bg-center ml-auto mr-auto text-center lg:w-3/12">
             <div>
-              <p className="mt-4">
+              <p className="text-gray-600 font-medium mt-4">
                 Nimm dir einen Moment Zeit, um deine Kollegen zu bewerten. Melde
                 dich mit den Zugangsdaten an, die du von deiner
                 Personalabteilung erhalten hast!
@@ -99,8 +98,8 @@ export default function Home() {
           <div className="navbar bg-black text-white flex justify-between items-center h-full px-4">
             <div></div>
             <div className="flex items-center">
-              <a className="ml-0 btn btn-ghost text-md lg:text-lg lg:ml-32">
-                Team Assessment | Rent Group München Q-1
+              <a className="ml-8 btn btn-ghost text-sm lg:text-lg lg:ml-32">
+                Team Assessment | RG München Q-1
               </a>
             </div>
             <div>
@@ -173,14 +172,14 @@ export default function Home() {
                             alt="logo"
                           />
                         </div>
-                        <p className="sm: mt-6 ml-4 mr-4 lg:mt-0">
+                        <p className="text-gray-600 font-medium mt-6 ml-4 mr-4 lg:mt-0">
                           Liebes Team, bei dem Team Assessment geht es darum,
                           das persönliche Engagement unserer Mitarbeiter zu
                           bewerten. Erwartbare Ergebnisse werden hierbei nicht
                           berücksichtigt, da diese bereits im Grundgehalt der
                           einzelnen Mitarbeiter verankert sind.{" "}
                         </p>
-                        <p className="mt-6 ml-4 mr-4">
+                        <p className="text-gray-500 font-medium mt-6 ml-4 mr-4">
                           Du bewertest Einsatzbereitschaft, Engagement, den
                           persönlichen Beitrag zu Gruppenzielen, die
                           Bereitschaft anderen zu helfen, die Teamfähigkeit, die
@@ -189,15 +188,17 @@ export default function Home() {
                           grundsätzlich die Dinge, die wir als Unternehmen
                           anstreben.
                         </p>{" "}
-                        <p className="mt-6 ml-4 mr-4">
+                        <p className="text-gray-500 font-medium mt-6 ml-4 mr-4">
                           Bitte mach dir bewusst, dass es nicht darum geht, ob
                           du den Lebensstil oder den Charakter des Mitarbeiter
                           magst oder nicht.
                         </p>
-                        <p className="mt-6 ml-4 mr-4">
+                        <p className="text-gray-500 font-medium mt-6 ml-4 mr-4">
                           Diese Anfrage ist völlig{" "}
-                          <span className="font-bold">anonym</span>. Das
-                          bedeutet, dass niemand, auch nicht die
+                          <span className="font-extrabold text-black">
+                            anonym
+                          </span>
+                          . Das bedeutet, dass niemand, auch nicht die
                           Geschäftsführer, erfährt, welche Bewertungen du deinen
                           Kollegen gegeben hast.
                         </p>
@@ -236,7 +237,7 @@ export default function Home() {
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                  <div className="mb-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                     {candidates.map((candidate) => (
                       <CandidateCard
                         key={candidate._id}
@@ -253,9 +254,16 @@ export default function Home() {
                     <span className="font-bold ml-1">{" " + user.logInID}</span>
                   </p>
 
-                  <p className="hidden lg:text-md flex justify-end mr-3 text-gray-400 text-center md:text-left">
+                  <p className="hidden lg:flex justify-end text-md  mr-3 text-gray-400 text-center">
                     Administrator
                   </p>
+
+                  <div className="mt-6 hero flex justify-center items-center h-2/6 w-5/6 bg-cover bg-center ml-auto mr-auto lg:w-2/12 mt-0">
+                    <img
+                      src="https://d2nk66epwbpimf.cloudfront.net/images/345249fd-0959-4762-bfbc-80ca4247abbb/54ad38e7-f4b4-4dc6-9e80-21e06958a192.png"
+                      alt="logo"
+                    />
+                  </div>
 
                   <div className="flex justify-end">
                     <div className="hero flex justify-center items-center h-2/6 w-3/6 bg-cover bg-center ml-auto mr-auto text-center">
@@ -293,7 +301,7 @@ export default function Home() {
                     </p>
                   </div>
 
-                  <div className="grid center grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 lg:ml-8">
+                  <div className="mb-6 grid center grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 lg:ml-8">
                     {candidates.map((candidate) => (
                       <CandidateCardAdmin
                         key={candidate._id}
@@ -302,6 +310,11 @@ export default function Home() {
                       />
                     ))}
                   </div>
+                  {/* <div>
+                    <Link to={"/datenschutz"} className="flex justify-end mr-3 mt-3 mb-3 font-semibold">
+                    Datenschutz Erklärung
+                    </Link>
+                  </div> */}
                 </>
               )}
             </>

@@ -1,15 +1,14 @@
 export default function CandidateCardAdmin({ candidate }) {
-
   const numericGrades = candidate.assessmentGrade
     .map((grade) => parseFloat(grade))
     .filter((grade) => !isNaN(grade));
 
   const sumOfGrades = numericGrades.reduce((acc, curr) => acc + curr, 0);
   const averageRating = sumOfGrades / numericGrades.length;
-  
+
   let color = "";
-  if(isNaN(averageRating)) {
-    color = "bg-gray-300"
+  if (isNaN(averageRating)) {
+    color = "bg-gray-300";
   } else if (averageRating <= 3) {
     color = "bg-red-400";
   } else if (averageRating > 3 && averageRating < 7) {
@@ -40,7 +39,11 @@ export default function CandidateCardAdmin({ candidate }) {
           </div>
           <p className="mt-3.5">
             Rating:{" "}
-            {isNaN(averageRating) ? <span className="font-bold">Noch keine Bewertung</span> : <span className="font-bold">{averageRating.toFixed(2)}</span>}
+            {isNaN(averageRating) ? (
+              <span className="font-bold">Noch keine Bewertung</span>
+            ) : (
+              <span className="font-bold">{averageRating.toFixed(2)}</span>
+            )}
           </p>
           <p className="mt-3.5">
             Anzahl der Bewertungen:{" "}
