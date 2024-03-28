@@ -45,18 +45,18 @@ export default function Home() {
               Team Assessment | RG München Q-1
             </a>
           </div>
-          <div className="mt-6 hero flex justify-center items-center h-2/6 w-5/6 bg-cover bg-center ml-auto mr-auto lg:w-3/12 mt-0">
+          <div className="mt-6 hero flex justify-center items-center h-2/6 w-4/6 bg-cover bg-center ml-auto mr-auto lg:w-3/12 mt-0">
             <img
               src="https://d2nk66epwbpimf.cloudfront.net/images/345249fd-0959-4762-bfbc-80ca4247abbb/54ad38e7-f4b4-4dc6-9e80-21e06958a192.png"
               alt="logo"
             />
           </div>
-          <div className="hero flex justify-center items-center h-2/6 w-4/6 bg-cover bg-center ml-auto mr-auto text-center lg:w-3/12">
+          <div className="hero flex justify-center items-center h-2/6 w-5/6 bg-cover bg-center ml-auto mr-auto text-center lg:w-3/12">
             <div>
-              <p className="text-gray-600 font-medium mt-4">
+              <p className="font-anek text-gray-600 font-medium mt-4">
                 Nimm dir einen Moment Zeit, um deine Kollegen zu bewerten. Melde
                 dich mit den Zugangsdaten an, die du von deiner
-                Personalabteilung erhalten hast!
+                IT-Abteilung erhalten hast!
               </p>
             </div>
           </div>
@@ -156,12 +156,12 @@ export default function Home() {
             <>
               {user.role === "user" ? (
                 <>
-                  <p className="hidden lg:flex justify-end  mr-3 mt-3 font-semibold">
+                  <p className="hidden lg:flex justify-end  mr-5 mt-3 font-semibold">
                     Anmelde ID:{" "}
                     <span className="font-bold ml-1">{" " + user.logInID}</span>
                   </p>
 
-                  <div className="flex justify-end">
+                  <div className="font-anek text-md flex justify-end lg:text-lg">
                     <div></div>
                     <div className="hero flex justify-center items-center h-2/6 w-6/6 mt-6 bg-cover bg-center ml-auto mr-auto text-center lg:w-4/12">
                       <div className="max-w-xxl">
@@ -199,8 +199,8 @@ export default function Home() {
                             anonym
                           </span>
                           . Das bedeutet, dass niemand, auch nicht die
-                          Geschäftsführer, erfährt, welche Bewertungen du deinen
-                          Kollegen gegeben hast.
+                          Geschäftsführer, erfährt, wie du deinen
+                          Kollegen bewertet hast.
                         </p>
                         <p className="mt-10 ml-4 mr-4 mb-6 font-bold">
                           Skala der Bewertung
@@ -209,7 +209,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className=" mr-6 ml-6 lg:ml-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                  <div className="font-anek mr-6 ml-6 lg:ml-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     <p>
                       <span className="font-bold">1 Stern:</span> Sehr Schlecht,
                       wird sich nicht verbessern / verändern
@@ -237,7 +237,7 @@ export default function Home() {
                     </p>
                   </div>
 
-                  <div className="mb-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                  <div className="font-anek mb-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                     {candidates.map((candidate) => (
                       <CandidateCard
                         key={candidate._id}
@@ -249,12 +249,12 @@ export default function Home() {
                 </>
               ) : (
                 <>
-                  <p className="hidden lg:flex justify-end mr-3 mt-3 font-semibold">
+                  <p className="hidden lg:flex justify-end mr-5 mt-3 font-semibold">
                     Anmelde ID:
                     <span className="font-bold ml-1">{" " + user.logInID}</span>
                   </p>
 
-                  <p className="hidden lg:flex justify-end text-md  mr-3 text-gray-400 text-center">
+                  <p className="hidden lg:flex justify-end text-md mr-5 text-gray-400 text-center">
                     Administrator
                   </p>
 
@@ -265,43 +265,43 @@ export default function Home() {
                     />
                   </div>
 
-                  <div className="flex justify-end">
+                  <div className="font-anek flex justify-end">
                     <div className="hero flex justify-center items-center h-2/6 w-3/6 bg-cover bg-center ml-auto mr-auto text-center">
-                      <p className="text-lg mt-6 mb-6 font-bold">
-                        Skala der Bewertung
+                      <p className="text-lg mt-2 mb-10 font-bold lg:text-xl">
+                      Übersicht | Rating der Mitarbeiter
                       </p>
                     </div>
                   </div>
 
-                  <div className="mr-4 ml-4 lg:ml-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                  <div className="font-anek mr-4 ml-4 lg:ml-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     <p>
-                      <span className="font-bold">1 Stern:</span> Sehr Schlecht,
+                      <span className="font-bold text-red-600">Bis 2:</span> Sehr Schlecht,
                       wird sich nicht verbessern / verändern
                     </p>
                     <p>
-                      <span className="font-bold">2 bis 3 Sterne:</span>{" "}
+                      <span className="font-bold  text-orange-500">Ab 2 bis 3:</span>{" "}
                       Schlecht, etwas sollte sich rasch verbessern
                     </p>
                     <p>
-                      <span className="font-bold">4 bis 5 Sterne:</span> Im
+                      <span className="font-bold  text-yellow-400">Ab 4 bis 5:</span> Im
                       Moment nicht sehr gut, sollte sich verbessern
                     </p>
                     <p>
-                      <span className="font-bold">6 bis 7 Sterne:</span>{" "}
+                      <span className="font-bold  text-yellow-400">Ab 6 bis 7:</span>{" "}
                       Durchschnittlich, anderswo normal, mit Raum, sich zu
                       steigern
                     </p>
                     <p>
-                      <span className="font-bold">8 bis 9 Sterne:</span> sehr
+                      <span className="font-bold  text-lime-400">Ab 8 bis 9:</span> sehr
                       gut, überdurchschnittlich, mit etwas Luft nach oben
                     </p>
                     <p>
-                      <span className="font-bold">10 Sterne:</span>{" "}
+                      <span className="font-bold  text-green-600">Ab 9 bis 10:</span>{" "}
                       Herrvorrangender Wert, weit mehr als gefordert. Perfekt!
                     </p>
                   </div>
 
-                  <div className="mb-6 grid center grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 lg:ml-8">
+                  <div className="font-anek mb-6 grid center grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 lg:ml-8">
                     {candidates.map((candidate) => (
                       <CandidateCardAdmin
                         key={candidate._id}
@@ -310,11 +310,6 @@ export default function Home() {
                       />
                     ))}
                   </div>
-                  {/* <div>
-                    <Link to={"/datenschutz"} className="flex justify-end mr-3 mt-3 mb-3 font-semibold">
-                    Datenschutz Erklärung
-                    </Link>
-                  </div> */}
                 </>
               )}
             </>

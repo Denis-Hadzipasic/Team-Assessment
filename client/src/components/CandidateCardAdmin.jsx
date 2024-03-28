@@ -9,14 +9,16 @@ export default function CandidateCardAdmin({ candidate }) {
   let color = "";
   if (isNaN(averageRating)) {
     color = "bg-gray-300";
-  } else if (averageRating <= 3) {
-    color = "bg-red-400";
-  } else if (averageRating > 3 && averageRating < 7) {
+  } else if (averageRating <= 2) {
+    color = "bg-red-600";
+  } else if (averageRating > 2 && averageRating < 4) {
+    color = "bg-orange-500";
+  } else if (averageRating >= 4 && averageRating < 8) {
     color = "bg-yellow-400";
-  } else if (averageRating >= 7 && averageRating < 9) {
-    color = "bg-blue-400";
+  } else if (averageRating >= 8 && averageRating < 9) {
+    color = "bg-lime-400";
   } else {
-    color = "bg-green-400";
+    color = "bg-green-600";
   }
 
   return (
