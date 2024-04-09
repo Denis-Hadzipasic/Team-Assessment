@@ -279,7 +279,7 @@ export default function Home() {
                       wird sich nicht verbessern / verändern
                     </p>
                     <p>
-                      <span className="font-bold  text-orange-500">Ab 2 bis 3:</span>{" "}
+                      <span className="font-bold  text-orange-500">Ab 2 bis 4:</span>{" "}
                       Schlecht, etwas sollte sich rasch verbessern
                     </p>
                     <p>
@@ -287,7 +287,7 @@ export default function Home() {
                       Moment nicht sehr gut, sollte sich verbessern
                     </p>
                     <p>
-                      <span className="font-bold  text-yellow-400">Ab 6 bis 7:</span>{" "}
+                      <span className="font-bold  text-yellow-400">Ab 6 bis 8:</span>{" "}
                       Durchschnittlich, anderswo normal, mit Raum, sich zu
                       steigern
                     </p>
