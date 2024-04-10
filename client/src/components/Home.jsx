@@ -55,8 +55,8 @@ export default function Home() {
             <div>
               <p className="font-anek text-gray-600 font-medium mt-4">
                 Nimm dir einen Moment Zeit, um deine Kollegen zu bewerten. Melde
-                dich mit den Zugangsdaten an, die du von deiner
-                IT-Abteilung erhalten hast!
+                dich mit den Zugangsdaten an, die du von deiner IT-Abteilung
+                erhalten hast!
               </p>
             </div>
           </div>
@@ -173,11 +173,10 @@ export default function Home() {
                           />
                         </div>
                         <p className="text-gray-600 font-medium mt-6 ml-4 mr-4 lg:mt-0">
-                          Liebes Team, bei dem Team Assessment geht es darum,
-                          das persönliche Engagement unserer Mitarbeiter zu
-                          bewerten. Erwartbare Ergebnisse werden hierbei nicht
-                          berücksichtigt, da diese bereits im Grundgehalt der
-                          einzelnen Mitarbeiter verankert sind.{" "}
+                          Liebes Team, unser großes Ziel ist es, nur die besten
+                          Mitarbeiter zu beschäftigen. Bei dem Team Assessment
+                          geht es darum, das persönliche Engagement aller
+                          Mitarbeiter zu bewerten.
                         </p>
                         <p className="text-gray-500 font-medium mt-6 ml-4 mr-4">
                           Du bewertest Einsatzbereitschaft, Engagement, den
@@ -190,17 +189,36 @@ export default function Home() {
                         </p>{" "}
                         <p className="text-gray-500 font-medium mt-6 ml-4 mr-4">
                           Bitte mach dir bewusst, dass es nicht darum geht, ob
-                          du den Lebensstil oder den Charakter des Mitarbeiter
+                          du den Lebensstil oder den Charakter des Kollegen
                           magst oder nicht.
                         </p>
                         <p className="text-gray-500 font-medium mt-6 ml-4 mr-4">
-                          Diese Anfrage ist völlig{" "}
+                          Diese Anfrage ist{" "} 
                           <span className="font-extrabold text-black">
-                            anonym
+                             anonym
                           </span>
                           . Das bedeutet, dass niemand, auch nicht die
-                          Geschäftsführer, erfährt, wie du deinen
+                          Geschäftsführer, erfährt, Das bedeutet, dass niemand,
+                          auch nicht die Geschäftsführung, erfährt, wie du deine
                           Kollegen bewertet hast.
+                        </p>
+                        <p className="text-gray-500 font-medium mt-6 ml-4 mr-4">
+                          Du brauchst für die Bewertung aller Kollegen ca. 10
+                          Minuten. Falls du zu einigen Kollegen nicht direkt
+                          eine Meinung hast, kannst du dich auch zu einem
+                          späteren Zeitpunkt wieder einloggen und deine Meinung
+                          zu diesen abgeben.
+                        </p>
+                        <p className="text-gray-500 font-medium mt-6 ml-4 mr-4">
+                          Diese Umfrage ist vom{" "}
+                          <span className="font-extrabold text-black">
+                            22.04.
+                          </span>{" "}
+                          bis{" "}
+                          <span className="font-extrabold text-black">
+                            06.05.2024
+                          </span>{" "}
+                          geöffnet.
                         </p>
                         <p className="mt-10 ml-4 mr-4 mb-6 font-bold">
                           Skala der Bewertung
@@ -211,16 +229,12 @@ export default function Home() {
 
                   <div className="font-anek mr-6 ml-6 lg:ml-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     <p>
-                      <span className="font-bold">1 Stern:</span> Sehr Schlecht,
-                      wird sich nicht verbessern / verändern
+                      <span className="font-bold">10 Sterne:</span>{" "}
+                      Herrvorrangender Wert, weit mehr als gefordert. Perfekt!
                     </p>
                     <p>
-                      <span className="font-bold">2 bis 3 Sterne:</span>{" "}
-                      Schlecht, etwas sollte sich rasch verbessern
-                    </p>
-                    <p>
-                      <span className="font-bold">4 bis 5 Sterne:</span> Im
-                      Moment nicht sehr gut, sollte sich verbessern
+                      <span className="font-bold">8 bis 9 Sterne:</span> sehr
+                      gut, überdurchschnittlich, mit etwas Luft nach oben
                     </p>
                     <p>
                       <span className="font-bold">6 bis 7 Sterne:</span>{" "}
@@ -228,12 +242,16 @@ export default function Home() {
                       steigern
                     </p>
                     <p>
-                      <span className="font-bold">8 bis 9 Sterne:</span> sehr
-                      gut, überdurchschnittlich, mit etwas Luft nach oben
+                      <span className="font-bold">4 bis 5 Sterne:</span> Im
+                      Moment nicht sehr gut, sollte sich verbessern
                     </p>
                     <p>
-                      <span className="font-bold">10 Sterne:</span>{" "}
-                      Herrvorrangender Wert, weit mehr als gefordert. Perfekt!
+                      <span className="font-bold">2 bis 3 Sterne:</span>{" "}
+                      Schlecht, etwas sollte sich rasch verbessern
+                    </p>
+                    <p>
+                      <span className="font-bold">1 Stern:</span> Sehr Schlecht,
+                      wird sich nicht verbessern / verändern
                     </p>
                   </div>
 
@@ -268,36 +286,47 @@ export default function Home() {
                   <div className="font-anek flex justify-end">
                     <div className="hero flex justify-center items-center h-2/6 w-3/6 bg-cover bg-center ml-auto mr-auto text-center">
                       <p className="text-lg mt-2 mb-10 font-bold lg:text-xl">
-                      Übersicht | Rating der Mitarbeiter
+                        Übersicht | Rating der Mitarbeiter
                       </p>
                     </div>
                   </div>
 
                   <div className="font-anek mr-4 ml-4 lg:ml-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     <p>
-                      <span className="font-bold text-red-600">Bis 2:</span> Sehr Schlecht,
-                      wird sich nicht verbessern / verändern
+                      <span className="font-bold  text-green-600">
+                        Ab 9 bis 10:
+                      </span>{" "}
+                      Herrvorrangender Wert, weit mehr als gefordert. Perfekt!
                     </p>
                     <p>
-                      <span className="font-bold  text-orange-500">Ab 2 bis 4:</span>{" "}
-                      Schlecht, etwas sollte sich rasch verbessern
+                      <span className="font-bold  text-lime-400">
+                        Ab 8 bis 9:
+                      </span>{" "}
+                      sehr gut, überdurchschnittlich, mit etwas Luft nach oben
                     </p>
+
                     <p>
-                      <span className="font-bold  text-yellow-400">Ab 4 bis 5:</span> Im
-                      Moment nicht sehr gut, sollte sich verbessern
-                    </p>
-                    <p>
-                      <span className="font-bold  text-yellow-400">Ab 6 bis 8:</span>{" "}
+                      <span className="font-bold  text-yellow-400">
+                        Ab 6 bis 8:
+                      </span>{" "}
                       Durchschnittlich, anderswo normal, mit Raum, sich zu
                       steigern
                     </p>
                     <p>
-                      <span className="font-bold  text-lime-400">Ab 8 bis 9:</span> sehr
-                      gut, überdurchschnittlich, mit etwas Luft nach oben
+                      <span className="font-bold  text-yellow-400">
+                        Ab 4 bis 6:
+                      </span>{" "}
+                      Im Moment nicht sehr gut, sollte sich verbessern
                     </p>
                     <p>
-                      <span className="font-bold  text-green-600">Ab 9 bis 10:</span>{" "}
-                      Herrvorrangender Wert, weit mehr als gefordert. Perfekt!
+                      <span className="font-bold  text-orange-500">
+                        Ab 2 bis 4:
+                      </span>{" "}
+                      Schlecht, etwas sollte sich rasch verbessern
+                    </p>
+                    <p>
+                      <span className="font-bold text-red-600">Bis 2:</span>{" "}
+                      Sehr Schlecht, wird sich nicht verbessern / verändern
                     </p>
                   </div>
 

@@ -7,7 +7,7 @@ export default function CandidateCard({ candidate, user }) {
   const [voteBtn, setVoteBtn] = useState("Bewerten");
   const [voteBtnStatus, setVoteBtnStatus] = useState(true);
   const [voteBtnClass, setVoteBtnClass] = useState(
-    "bg-gray-400 border-2 border-gray-400 rounded-lg text-gray-600 px-4 py-1.5 mt-4 text-base cursor-not-allowed transition"
+    "bg-gray-400 border-2 border-gray-400 rounded-lg text-gray-600 px-4 pt-2 pb-1 mt-4 text-base cursor-not-allowed transition"
   );
   const [selectedGrade, setSelectedGrade] = useState({
     "--tw-bg-opacity": "0.2",
@@ -25,7 +25,7 @@ export default function CandidateCard({ candidate, user }) {
         setBtnHidden(true);
         setVoteBtn("Übermittelt");
         setVoteBtnClass(
-          "bg-green-600 border-2 border-green-400 rounded-lg text-slate-50 px-4 py-1.5 mt-4 text-base cursor-not-allowed transition"
+          "bg-green-600 border-2 border-green-400 rounded-lg text-slate-50 px-4 pt-2 pb-1 mt-4 text-base cursor-not-allowed transition"
         );
         setShowModal(false);
         console.log(response.data);
@@ -41,7 +41,7 @@ export default function CandidateCard({ candidate, user }) {
     setVoteBtn("Bestätigen");
     setVoteBtnStatus(false);
     setVoteBtnClass(
-      "bg-[#292929] border-2 border-[#3e3e3e] rounded-lg text-white px-4 py-1.5 mt-4 text-base hover:border-[#fff] cursor-pointer transition"
+      "bg-[#292929] border-2 border-[#3e3e3e] rounded-lg text-white px-4 pt-2 pb-1 mt-4 text-base hover:border-[#fff] cursor-pointer transition"
     );
     setSelectedGrade();
   };
@@ -86,7 +86,7 @@ export default function CandidateCard({ candidate, user }) {
           {!checkIfVoted && (
             <>
               <button
-                className="bg-[#292929] border-2 border-[#3e3e3e] rounded-lg text-white px-4 py-1.5 mt-4 text-base hover:border-[#fff] cursor-pointer transition ml-3"
+                className="bg-[#292929] border-2 border-[#3e3e3e] rounded-lg text-white px-4 pt-2 pb-1 mt-4 text-base hover:border-[#fff] cursor-pointer transition ml-3"
                 type="button"
                 onClick={() => setShowModal(true)}
                 hidden={btnHidden}
@@ -127,16 +127,16 @@ export default function CandidateCard({ candidate, user }) {
                         </div>
                         <div className="flex items-center justify-end pr-4 pb-4 border-t border-solid border-blueGray-200 rounded-b">
                           <button
-                            className="bg-[#FF2222] border-2 border-[#FB5252] rounded-lg text-white px-4 py-1.5 mt-4 text-base hover:border-[#fff] cursor-pointer transition ml-3"
+                            className="bg-[#FF2222] border-2 border-[#FB5252] rounded-lg text-white px-4 pt-2 pb-1 mt-4 text-base hover:border-[#fff] cursor-pointer transition ml-3"
                             type="button"
                             onClick={() => setShowModal(false)}
                           >
-                            Abrechen
+                            Abbrechen
                           </button>
                           <input
                             type="submit"
                             value={"Bestätigen"}
-                            className="bg-[#292929] border-2 border-[#3e3e3e] rounded-lg text-white px-4 py-1.5 mt-4 text-base hover:border-[#fff] cursor-pointer transition ml-3"
+                            className="bg-[#292929] border-2 border-[#3e3e3e] rounded-lg text-white px-4 pt-2 pb-1 mt-4 text-base hover:border-[#fff] cursor-pointer transition ml-3"
                           />
                         </div>
                       </div>
@@ -151,7 +151,7 @@ export default function CandidateCard({ candidate, user }) {
             <input
               type="submit"
               value={"Schon bewertet"}
-              className="bg-gray-400 border-2 border-gray-400 rounded-lg text-gray-600 px-4 py-1.5 mt-4 text-base cursor-not-allowed transition"
+              className="bg-gray-400 border-2 border-gray-400 rounded-lg text-gray-600 px-4 pt-2 pb-1 mt-4 text-base cursor-not-allowed transition"
               disabled={true}
             />
           )}
