@@ -35,7 +35,7 @@ export default function Home() {
               </div>
               <div className="modal-action">
                 <form method="dialog">
-                  <button className="btn">Close</button>
+                  <button className="btn">Schließen</button>
                 </form>
               </div>{" "}
             </div>{" "}

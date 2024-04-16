@@ -4,6 +4,7 @@ require("./db.js");
 const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
+const path = require("path");
 const app = express();
 const PORT = process.env.PORT;
 
@@ -20,9 +21,14 @@ app.use(
 
 app.use(cookieParser());
 app.use(express.json());
+app.use(express.static(path.resolve(__dirname, "client", "dist")));
 
-app.use("/user", userRouter);
-app.use("/candidate", candidateRoute);
+app.use("/api/user", userRouter);
+app.use("/api/candidate", candidateRoute);
+
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+});
 
 app.use(errorHandler);
 
