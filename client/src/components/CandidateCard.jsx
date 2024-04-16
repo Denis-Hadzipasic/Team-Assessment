@@ -28,10 +28,8 @@ export default function CandidateCard({ candidate, user }) {
           "bg-green-600 border-2 border-green-400 rounded-lg text-slate-50 px-4 pt-2 pb-1 mt-4 text-base cursor-not-allowed transition"
         );
         setShowModal(false);
-        console.log(response.data);
       })
       .catch((error) => {
-        console.log(error);
       });
   };
 
@@ -52,7 +50,7 @@ export default function CandidateCard({ candidate, user }) {
         <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
           <div className="flex flex-col">
             <h4 className="text-xl font-semibold text-center md:text-left">
-              {candidate.lastName + " " + candidate.firstName + ":"}
+              {candidate.firstName + " " + candidate.lastName + ":"}
             </h4>
             <p className="text-md text-gray-400 text-center md:text-left">
               {candidate.department}
@@ -118,7 +116,7 @@ export default function CandidateCard({ candidate, user }) {
                         </div>
                         <div className="relative p-4 flex-auto">
                           <p className="lg:my-2 text-blueGray-500 text-lg leading-relaxed">
-                            Willst du den{" "}
+                            Willst du {" "}
                             <span className="font-bold">
                               {candidate.firstName + " " + candidate.lastName}{" "}
                             </span>

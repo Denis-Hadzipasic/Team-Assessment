@@ -151,7 +151,10 @@ export default function Home() {
           </div>
 
           {!candidates ? (
-            <p>Loading</p>
+            <div className="flex justify-center mt-8">
+              <div className=" border-gray-300 h-20 w-20 animate-spin rounded-full border-8 border-t-blue-600" />
+
+            </div>
           ) : (
             <>
               {user.role === "user" ? (
@@ -197,8 +200,7 @@ export default function Home() {
                           <span className="font-extrabold text-black">
                              anonym
                           </span>
-                          . Das bedeutet, dass niemand, auch nicht die
-                          Geschäftsführer, erfährt, Das bedeutet, dass niemand,
+                          . Das bedeutet, dass niemand,
                           auch nicht die Geschäftsführung, erfährt, wie du deine
                           Kollegen bewertet hast.
                         </p>

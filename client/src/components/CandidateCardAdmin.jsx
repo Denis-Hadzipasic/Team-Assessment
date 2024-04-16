@@ -26,7 +26,7 @@ export default function CandidateCardAdmin({ candidate }) {
       <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
         <div className="flex flex-col">
           <h4 className="text-lg font-semibold text-center md:text-left">
-            {candidate.lastName + " " + candidate.firstName + ":"}
+            {candidate.firstName + " " + candidate.lastName + ":"}
           </h4>
           <p className="text-md text-gray-400 text-center md:text-left">
             {candidate.department}

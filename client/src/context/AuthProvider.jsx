@@ -14,10 +14,8 @@ export default function AuthProvider({ children }) {
       .get("/user/profile")
       .then((response) => {
         setUser(response.data);
-        console.log(response.data);
       })
       .catch((error) => {
-        console.log(error);
         setUser(null);
       })
       .finally(() => {
@@ -28,10 +26,8 @@ export default function AuthProvider({ children }) {
       .get("/candidate/candidateList")
       .then((response) => {
         setCandidates(response.data);
-        console.log(response.data);
       })
       .catch((error) => {
-        console.log(error);
         setCandidates(null);
       })
       .finally(() => {
@@ -49,7 +45,6 @@ export default function AuthProvider({ children }) {
         }, 350);
       })
       .catch((error) => {
-        console.log(error);
         badCredentials()
         setUser(null);
       })
@@ -65,7 +60,6 @@ export default function AuthProvider({ children }) {
         setUser(null);
       })
       .catch((error) => {
-        console.log(error);
       });
   };
 
