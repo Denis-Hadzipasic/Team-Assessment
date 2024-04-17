@@ -21,13 +21,13 @@ app.use(
 
 app.use(cookieParser());
 app.use(express.json());
-app.use(express.static(path.resolve(__dirname, "client", "dist")));
+app.use(express.static(path.resolve(__dirname, "client", "build")));
 
 app.use("/api/user", userRouter);
 app.use("/api/candidate", candidateRoute);
 
 app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
 app.use(errorHandler);
